@@ -1,20 +1,20 @@
 'use strict';
 
 const videoConfig = {
-  fossa:      { loop: '../BackGound_s/AmbFossa.mp4' },
+  fossa:      { loop: '../Midia/Trasi%C3%A7%C3%B5es/BackGound_s/AmbFossa.mp4' },
   transition: {
-    bridge: '../Trasi%C3%A7%C3%B5es/Trasi%C3%A7%C3%A3o%20Gar%C3%A7aMoura.mp4',
-    reverseBridge: '../Trasi%C3%A7%C3%B5es/Trasi%C3%A7%C3%A3o%20Gar%C3%A7aMoura.mp4',
-    fossaReturn: '../Apresenta%C3%A7%C3%A3o%20Animal/fossaint.mp4',
-    garcaReturn: '../Apresenta%C3%A7%C3%A3o%20Animal/fossaint.mp4',
-    extraReturn: '../Apresenta%C3%A7%C3%A3o%20Animal/fossaint.mp4',
-    extra2Return: '../Apresenta%C3%A7%C3%A3o%20Animal/fossaint.mp4',
-    extra3Return: '../Apresenta%C3%A7%C3%A3o%20Animal/fossaint.mp4',
+    bridge: '../Midia/Trasi%C3%A7%C3%B5es/Trasi%C3%A7%C3%A3o%20Gar%C3%A7aMoura.mp4',
+    reverseBridge: '../Midia/Trasi%C3%A7%C3%B5es/Trasi%C3%A7%C3%A3o%20Gar%C3%A7aMoura.mp4',
+    fossaReturn: '../Midia/Trasi%C3%A7%C3%B5es/Imagens/Apresenta%C3%A7%C3%A3o%20Animal/fossaint.mp4',
+    garcaReturn: '../Midia/Trasi%C3%A7%C3%B5es/Imagens/Apresenta%C3%A7%C3%A3o%20Animal/fossaint.mp4',
+    extraReturn: '../Midia/Trasi%C3%A7%C3%B5es/Imagens/Apresenta%C3%A7%C3%A3o%20Animal/fossaint.mp4',
+    extra2Return: '../Midia/Trasi%C3%A7%C3%B5es/Imagens/Apresenta%C3%A7%C3%A3o%20Animal/fossaint.mp4',
+    extra3Return: '../Midia/Trasi%C3%A7%C3%B5es/Imagens/Apresenta%C3%A7%C3%A3o%20Animal/fossaint.mp4',
   },
-  garca:      { loop: '../BackGound_s/Rios%20E%20Nevoas.mp4' },
-  extra:      { loop: '../BackGound_s/Rios%20E%20Nevoas.mp4' },
-  'extra-2':  { loop: '../BackGound_s/Rios%20E%20Nevoas.mp4' },
-  'extra-3':  { loop: '../BackGound_s/Rios%20E%20Nevoas.mp4' },
+  garca:      { loop: '../Midia/Trasi%C3%A7%C3%B5es/BackGound_s/Rios%20E%20Nevoas.mp4' },
+  extra:      { loop: '../Midia/Trasi%C3%A7%C3%B5es/BackGound_s/Rios%20E%20Nevoas.mp4' },
+  'extra-2':  { loop: '../Midia/Trasi%C3%A7%C3%B5es/BackGound_s/Rios%20E%20Nevoas.mp4' },
+  'extra-3':  { loop: '../Midia/Trasi%C3%A7%C3%B5es/BackGound_s/Rios%20E%20Nevoas.mp4' },
 };
 
 const vidA = document.getElementById('video-A');
