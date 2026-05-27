@@ -1,20 +1,20 @@
 'use strict';
 
 const videoConfig = {
-  fossa:      { loop: '../VDalt/AmbFossa.mp4' },
+  fossa:      { loop: '../BackGound_s/AmbFossa.mp4' },
   transition: {
-    bridge: '../VDalt/Trasição.mp4',
-    reverseBridge: '../VDalt/transition-reverse.mp4',
-    fossaReturn: '../VDalt/fossaint.mp4',
-    garcaReturn: '../VDalt/fossaint.mp4',
-    extraReturn: '../VDalt/fossaint.mp4',
-    extra2Return: '../VDalt/fossaint.mp4',
-    extra3Return: '../VDalt/fossaint.mp4',
+    bridge: '../Trasi%C3%A7%C3%B5es/Trasi%C3%A7%C3%A3o%20Gar%C3%A7aMoura.mp4',
+    reverseBridge: '../Trasi%C3%A7%C3%B5es/Trasi%C3%A7%C3%A3o%20Gar%C3%A7aMoura.mp4',
+    fossaReturn: '../Apresenta%C3%A7%C3%A3o%20Animal/fossaint.mp4',
+    garcaReturn: '../Apresenta%C3%A7%C3%A3o%20Animal/fossaint.mp4',
+    extraReturn: '../Apresenta%C3%A7%C3%A3o%20Animal/fossaint.mp4',
+    extra2Return: '../Apresenta%C3%A7%C3%A3o%20Animal/fossaint.mp4',
+    extra3Return: '../Apresenta%C3%A7%C3%A3o%20Animal/fossaint.mp4',
   },
-  garca:      { loop: '../VDalt/Rios e Nevoas.mp4' },
-  extra:      { loop: '../VDalt/Rios e Nevoas.mp4' },
-  'extra-2':  { loop: '../VDalt/Rios e Nevoas.mp4' },
-  'extra-3':  { loop: '../VDalt/Rios e Nevoas.mp4' },
+  garca:      { loop: '../BackGound_s/Rios%20E%20Nevoas.mp4' },
+  extra:      { loop: '../BackGound_s/Rios%20E%20Nevoas.mp4' },
+  'extra-2':  { loop: '../BackGound_s/Rios%20E%20Nevoas.mp4' },
+  'extra-3':  { loop: '../BackGound_s/Rios%20E%20Nevoas.mp4' },
 };
 
 const vidA = document.getElementById('video-A');
