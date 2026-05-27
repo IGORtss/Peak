@@ -1,0 +1,217 @@
+/* ═══════════════════════════════════════════════════════════════════
+   Editorial Split Layout — Luxury Magazine Style
+   ═══════════════════════════════════════════════════════════════════ */
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --col-w: 35%;
+  --col-bg: #ffffff;
+  --col-text: #111111;
+  --accent: #2a1f14;
+  --slide-dur: 0.85s;
+  --slide-ease: cubic-bezier(.22, .9, .24, 1);
+}
+
+html { font-size: 16px; }
+
+body {
+  font-family: 'Outfit', system-ui, sans-serif;
+  background: #000;
+  overflow-x: hidden;
+}
+
+/* ── VIDEO LAYER ─────────────────────────────────────────────────── */
+.bg-video {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  object-fit: cover;
+  z-index: 0;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  pointer-events: none;
+}
+.bg-video.visible { opacity: 1; }
+
+/* ── LAYOUT ROOT ─────────────────────────────────────────────────── */
+#site-root {
+  position: relative;
+  z-index: 2;
+}
+
+/* ── LEFT COLUMN ─────────────────────────────────────────────────── */
+#left-col {
+  position: fixed;
+  left: 0; top: 0; bottom: 0;
+  width: var(--col-w);
+  background: var(--col-bg);
+  color: var(--col-text);
+  padding: 7vh 4.5vw 8vh 6.5vw;
+  overflow-y: auto;
+  overflow-x: hidden;
+  z-index: 3;
+
+  /* Transição de entrada/saída */
+  transform: translateX(0);
+  transition: transform var(--slide-dur) var(--slide-ease);
+  will-change: transform;
+}
+
+/* Estado "saindo" → desliza para a esquerda */
+#left-col.state-exiting {
+  transform: translateX(-100%);
+}
+
+/* Sem border-radius em lugar nenhum */
+#left-col,
+#left-col * { border-radius: 0 !important; }
+
+/* ── RIGHT AREA ──────────────────────────────────────────────────── */
+#right-opening {
+  position: fixed;
+  left: var(--col-w); top: 0; right: 0; bottom: 0;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* ── TIPOGRAFIA ──────────────────────────────────────────────────── */
+.headline {
+  font-family: 'Cormorant Garamond', Georgia, serif;
+  font-weight: 700;
+  font-size: clamp(3.4rem, 7vw, 6rem);
+  line-height: 0.88;
+  letter-spacing: -0.01em;
+  margin-bottom: 0.7rem;
+  color: var(--col-text);
+}
+
+.eyebrow {
+  font-size: 0.72rem;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  margin-bottom: 0.7rem;
+  color: #666;
+}
+
+.lead {
+  font-size: 1.04rem;
+  line-height: 1.85;
+  margin-bottom: 1.4rem;
+  color: #333;
+}
+
+.section {
+  margin-bottom: 2.2rem;
+}
+
+.section h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.55rem;
+  font-weight: 600;
+  margin: 0 0 0.55rem;
+  color: var(--accent);
+}
+
+.section p {
+  font-size: 0.97rem;
+  line-height: 1.85;
+  margin-bottom: 0.85rem;
+  color: #2a2a2a;
+}
+
+/* ── ANIMAL PNGs ─────────────────────────────────────────────────── */
+/* Sangram para a área direita; position absolute sai do flow */
+.animal-png {
+  position: absolute;
+  z-index: 4;
+  pointer-events: auto;
+  will-change: transform;
+  transition: transform 0.55s cubic-bezier(.22, .9, .24, 1);
+}
+
+.png-fossa {
+  right: -40%;          /* bleed para a janela de vídeo */
+  top: 20vh;
+  width: 72vw;
+  max-width: 1400px;
+  transform-origin: center center;
+}
+
+.png-eco {
+  right: -18%;
+  top: 65vh;
+  width: 48vw;
+  max-width: 920px;
+  transform-origin: center center;
+}
+
+/* Hover: scale + levita */
+.animal-png:hover {
+  transform: scale(1.07) translateY(-10px);
+}
+
+/* ── DICA DE SCROLL ──────────────────────────────────────────────── */
+.scroll-cue {
+  font-size: 0.75rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: #888;
+  margin-top: 1rem;
+  padding-bottom: 2rem;
+  animation: cuePulse 2.2s ease-in-out infinite;
+}
+
+@keyframes cuePulse {
+  0%, 100% { opacity: 0.5; }
+  50%       { opacity: 1;   }
+}
+
+/* Sentinel invisível — ponto de detecção de fim de scroll */
+#scroll-sentinel {
+  height: 1px;
+  width: 100%;
+  margin-top: 0.5rem;
+}
+
+/* ── GARÇA — SEÇÃO (injetada por JS) ─────────────────────────────── */
+#part-garca {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.75s ease, transform 0.75s ease;
+}
+#part-garca.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ── LOADER OVERLAY (aparece durante transição) ──────────────────── */
+#transition-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  background: transparent;
+}
+
+/* ── RESPONSIVO ──────────────────────────────────────────────────── */
+@media (max-width: 900px) {
+  :root { --col-w: 100%; }
+
+  #left-col {
+    position: relative;
+    height: auto;
+    padding: 6vh 6vw;
+  }
+
+  #right-opening { display: none; }
+
+  .png-fossa, .png-eco {
+    position: relative;
+    width: 100%;
+    right: auto;
+    top: auto;
+    max-width: 100%;
+  }
+}

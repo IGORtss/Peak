@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Animais • Transição Visual</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ── VIDEO LAYER (double-buffer, sempre atrás de tudo) ── -->
+  <video id="video-A" class="bg-video" muted playsinline preload="auto" aria-hidden="true"></video>
+  <video id="video-B" class="bg-video" muted playsinline preload="auto" aria-hidden="true"></video>
+
+  <div id="site-root">
+
+    <!-- ── COLUNA ESQUERDA ── -->
+    <aside id="left-col" aria-label="Coluna de leitura">
+
+      <!-- Estado 1: Fossa -->
+      <section id="part-fossa">
+
+        <header class="hero">
+          <p class="eyebrow">Madagascar · Carnivora</p>
+          <h1 class="headline">FOSSA</h1>
+          <p class="lead">A Fossa é um carnívoro fascinante e misterioso que vive nas florestas de Madagascar. Com corpo ágil e musculoso, ela é uma caçadora excepcional, deslizando entre as árvores com precisão e elegância.</p>
+        </header>
+
+        <div class="section">
+          <h2>Descrição</h2>
+          <p>Classificada como <em>Cryptoprocta ferox</em>, a Fossa assemelha-se superficialmente a um felino, mas pertence à família Eupleridae, endêmica de Madagascar. Seu corpo mede entre 70 e 80 cm, com cauda do mesmo comprimento, conferindo equilíbrio durante as acrobacias nas copas.</p>
+          <p>Solitária e crepuscular-noturna, move-se pela escuridão com maestria. Símbolo da beleza selvagem e da força silenciosa dos ecossistemas tropicais insulares.</p>
+        </div>
+
+        <div class="section has-png">
+          <h2>Distribuição e Habitat</h2>
+          <p>Endêmica de Madagascar, a Fossa habita as florestas tropicais úmidas do leste, as matas decíduas do oeste e os bosques espinhosos do sul árido.</p>
+          <p>A fragmentação do habitat reduziu drasticamente seu território. A espécie necessita de grandes corredores florestais contínuos para manter populações saudáveis.</p>
+          <!-- PNG: bleed para área direita -->
+          <img id="png-fossa-1" class="animal-png png-fossa" src="../img/fossa.png" alt="Fossa">
+        </div>
+
+        <div class="section has-png">
+          <h2>Ecologia</h2>
+          <p>Como predador de topo, a Fossa regula as populações de lêmures e demais presas, mantendo o equilíbrio das florestas malgaxes. Machos defendem territórios de até 26 km².</p>
+          <p>Essa organização espacial reflete a complexidade social de uma criatura aparentemente solitária mas territorialmente exigente.</p>
+          <img id="png-fossa-2" class="animal-png png-eco" src="../img/fossa-2.png" alt="Fossa — ecologia">
+        </div>
+
+        <div class="section">
+          <h2>Dieta</h2>
+          <p>Predador oportunista de largo espectro — os lêmures chegam a 50% da dieta — complementado por pequenos mamíferos, répteis, aves e insetos. Usa tanto emboscada quanto perseguição ativa, no solo e nas copas.</p>
+        </div>
+
+        <!-- Âncora de scroll: quando visível = fim da leitura -->
+        <div id="scroll-sentinel" aria-hidden="true"></div>
+        <p class="scroll-cue" id="scroll-cue-text">↓ Role para continuar</p>
+
+      </section>
+    </aside>
+
+    <!-- ── JANELA DE VÍDEO (direita) ── -->
+    <div id="right-opening" aria-hidden="true"></div>
+
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
